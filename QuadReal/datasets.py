@@ -3,10 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
+import pathlib 
+import os
 
-devices_df = pd.read_csv('/Users/Hanqi/Documents/CxC /QuadReal/devices.csv')
-readings_df = pd.read_csv('/Users/Hanqi/Documents/CxC /QuadReal/sampled_readings.csv')
-reading_types_df = pd.read_csv('/Users/Hanqi/Documents/CxC /QuadReal/reading_types.csv')
+
+cur_path  = os.getcwd()
+
+devices_df = pd.read_csv(cur_path + '/devices.csv')
+readings_df = pd.read_csv(cur_path + '/sampled_readings.csv')
+reading_types_df = pd.read_csv(cur_path + '/reading_types.csv')
 
 # hour_mapping (1 if between 8am and 6pm)
 
