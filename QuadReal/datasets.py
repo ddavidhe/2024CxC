@@ -47,6 +47,12 @@ readings_df['day type'] = readings_df['date'].dt.dayofweek.map({
 
 # nominal categories
 
+df_11_12 = readings_df[readings_df['value_type_id'].isin([11, 12])]
+df_other = readings_df[~readings_df['value_type_id'].isin([11,12])]
+
+
 readings_df = pd.get_dummies(readings_df, columns=['season'])
 
-print(readings_df.head(20))
+print(df_11_12.head())
+print(df_other.head())
+print(readings_df.columns())
