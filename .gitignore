@@ -1,6 +1,7 @@
 #Datasets
 QuadReal/sampled_readings.csv
 QuadReal/preprocessed.csv
+Infinite_Investment_Systems/history.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
