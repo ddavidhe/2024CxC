@@ -1,0 +1,230 @@
+Columns,Description,Field Values
+type_code,Account Type,CSH - Cash/RSP (note: Registered accounts are account type CSH; plan type is determined by PLAN IND)
+is_registered,,MRL - Margin - Long
+country_code,,MRS - Margin - Short
+currency_code,Currency of the Accoun,COD - Cash on Delivery
+is_active,,COM - Commodity
+class_id,,PSP - Prospect
+credit_code,Interest rate charged for debit balance. ISM ACF code with rates,
+debit_code,Debit Interest Method. An ISM ACF Code that determines the interest rate paid.,"0  None
+ 1  Normal
+ [2-9] or [A-Z] (except I, O, Q)  Special"
+last_trade_date,Last trade date in the client's account - ISM updated automatically. Format is YYYYMMDD Note: MidOffice updates this field when there's a trade in the trade calculate file.,
+contract_type,Represents the shareholder information SHLDR 54-101 valid values,"07 -if OBO: Y and Mail S 
+ 09 -if NOBO: Y and Mail S
+ 10 -if OBO: Y and Mail A
+ 12 -if NOBO: Y and Mail A 
+ 17 -if OBO: Y and Mail D 
+ 18 -if NOBO: Y and Mail D"
+inception_date,A/C Open Date,
+inception_date,Date account was opened - ISM system generated YYYYMMDD,
+net_of_fees,,
+cashflows_custody_fee,,
+fee_paid_separately,,
+custody_fee_withdrawal,,
+is_fee_exempt,,
+branch,Branch where the account resides,
+closing_date,Date account closed. Valid reason code required. Format is YYYYMMDD,
+closing_date,A/C Closing Date,
+closure_reason,Reason code for closing the Plan Account," 1 = Transfer external
+  2 = Transfer internal
+  3 = Full deregistration
+  4 = Partial deregistration
+  5 = To purchase annuity
+  6 = Estate
+  7 = Bankrupt
+  8 = Annulled
+  9 = Opened in error
+  A to Z = Additional as required 
+ PSSP Accounts
+  1 = Transfer external
+  2 = Transfer internal
+  3 = Death of participant
+  4 = Moved out of province
+  5 = Client inactive
+  6 to 8 = Not used
+  9 = Opened in error
+  A to Z = Additional as required"
+include_client_consolidation,"Account included on the consolidated statement, along with other accounts using the same client ID"," Y = Yes (default)
+  N = No"
+use_client_address,Client address used,
+credit_limit_type,A/C Credit Limit Type: Maximum amount of money an account can owe your firm:," 1 = $3000
+  2 = $5000
+  3 = $10,000
+  4 = $15,000
+  5 = $25,000
+  6 = $50,000
+  7 = $100,000
+  8 = $250,000
+  9 = No credit (identifies a restricted account and produces a hold mail confirm)"
+retail_plan,"Type of registered plan e.g. RRSP, LRSP, RRIF, LRIF, LIRA, LIF, QSSP",
+is_spousal,Whether the plan is spousal," Y = Yes
+  N = No, if Y spousal name required"
+is_arp_locked,"Indicates whether the RRSP was transferred. Can only be deregistered under certain conditions. 
+ Used to transfer pension benefits that the plan holder is not allowed to receive until age 65"," Y = Yes
+  N = No (default)"
+arp_pension_origin,"Used for LIRA, LIF, LRIF, LRSP locked-in plans to track pension legislation of plan since it is not determined on province client lives.
+ Description in CDBR4000 where Attribute Name = ‘PLN_ORG’",
+language_code,Language of the client," E = English
+  F= French"
+dividend_confirm_code,Advice notice requested by the client," 0 = No advance notice
+  1 = Yes"
+sss_location,Clearing location," M/1 = Montreal
+  T/2 = Toronto
+  V = Vancouver
+  C = Calgary"
+options_trading_type,Indicates whether or not the client can trade options. Refer to ISM enhance account profile user guide for definitions,
+sss_type,Securities Settlement Service (SSS) participant,D = Direct
+sss_agent,"Required field when SSS type equals ""A"" for Agency Transaction","""A"" for Agency Transaction"
+is_midwest_clearing_account,VSE Midwest Clearing Account,"Y = Yes, when Y funds must be US"
+rep_commission_rate,A/C Rep Comm Rate: Special Net RR Commissions being calculated for the RR by systems.,"Default equals 00.
+  First field (0-9) multiple RR net by factor in this field
+  Second field (1-9) divide above result by factor in this field"
+rep_commission_override,A/C Commission Override; Override to normal commission calculation by the ISM system. Both comm and comm RR fields must be coded,"00 = No percentage override. Normal tapering default
+ 01-99 = Percentage override for tapering using 99. Commission isn't calculated for the client account"
+interest_dividend_conversion_type,No conversion of interest/dividend funds. Used to flag accounts dividend and interest payment conversions," 0 = Normal div processing (default)
+  1 = Receive money in funds of payment
+  2 = Transfer to another account"
+guarantee_gtor_type,Indicates whether the account is a guarantor or guarantee," 0 = None
+  1 = Guarantor (one way relationship)
+  2 = Guaranteed account
+  3 = Guarantor (all accounts guarantee each other)"
+use_hand_delivery, Client's information should be hand delivered," N = No (default)
+  Y = Yes"
+use_mail,," N = No (default)
+  Y = Yes"
+share_name_address_to_issuer, Give name and address information to the Issuer.," N = No (default)
+  Y = Yes"
+shareholder_instructions_received,The client has sent in shareholder's communication information," N = No (default)
+  Y = Yes"
+rrsp_limit_reached,Account indicators. RRSP contribution limit.,
+is_portfolio_account,Account indicators for Portfolio account,
+has_no_min_commission,Account indicators with no minimum commission,
+is_tms_eligible,COD accounts eligible for Transaction Management Processing," Y = Yes
+  N = No"
+is_agent_bbs_participant,Indicates if the account settlement agent is a Book based participant," Y = Yes
+  N = No"
+is_parameters_account,Account indicator for Parameters account,
+is_spousal_transfer,Account indicator - spousal transfer,
+spousal_age_flag,Account indicator - spousal age,
+terminal_code,ISM Terminal ID to identify users,
+has_multiple_name,"For additional names, refer to the ATFA2700 file","Yes when the account has multiple names listed; otherwise, this field is blank."
+deceased_fair_market_value,Fair market value of RRIF plan at planholder's death,Mandatory when deceased date > 0
+target_grantor_grantee_flag,,
+discretionary_trading_authorized,Discretionary trading authorization," Y = Yes
+  N = No 
+  Blank = None"
+iso_funds_code,ISO funds code,
+esir_number,Electronic Settlement Instruction Registry (number for CDS Eltra and DCS),
+shareholder_language,Language of the client,
+dup_trip_quad_code,Used in the account structured named segment of the Name and Address file," A = main name and address for client or account
+  B, C, D = duplicate, triplicate, or quadruplet up to 3 additional name and addressees for account or client"
+special_tag,A/C Special Tag,"1 =JWROS
+ 2 =JTIC
+ 3 = Trust
+ 4 = Estate of"
+conjunction,A/C Conjunction,"Conjunction (English):
+  1 = And
+  2 = Or
+  3 = And/Or (French)
+ Conjunction (French):
+  1 = et
+  2 = or 
+  3 = et(ou)"
+title,A/C Title,"Title (English/French):
+ 1 = Mr./Monsieur
+ 2 = Mrs./Madame
+ 3 = Miss/Mademoiselle
+ 4 = Ms./Ms.
+ 5 = Dr./Docteur
+ 6 = Prof/Professeur"
+function_code,A/C Function Code,
+tms_settlement_location,Trade Management System Settlement Location,"Function Code (English):
+ 1 = Executor
+ 2 = Trustee
+ 3 = Curator
+ 4 = Liquidator
+ 5 = Guardian
+ 6 = In Trust For
+ Function Code (French)
+ 1 = Executeur
+ 2 = Fiduciaire
+ 3 = Curateur
+ 4 = Syndic
+ 5 = Tuteur
+ 6 = Es qualites a"
+portfolio_cost_method,Portfolio Cost - Cost Method. Controls processing by Client Account Management Service,"  Defaults to ACF Values
+ ‘C’ and  are obsolete"
+portfolio_name_address_option,Portfolio Head - Name and Address Options," Default to ACF
+ Print full Name and Address (6 lines)
+ ‘N’ Print Short Name only
+ ‘S’ Print Account Number only"
+portfolio_report_option,Portfolio Report - Account type; Causes trades for the account to be automatically generated for CAMS. Controls portfolio evaluation report copies to be printed.," No portfolio evaluation
+ [1-9] Portfolio Account."
+portfolio_summary_option,Portfolio Summmary - Summary Report Options. Controls processing by Client Account Management Service," No Evaluation printing. Default to ACF
+ ‘N’ Print Average Unit Cost and Book Value, Total Book Value, and Total realized profil/loss
+ ‘T’ Print Average Unit Cost and Book Value only
+ ‘D’ Do not print any"
+receive_general_mailings,Represents the old NP-41 shareholder coding - Indicates that client will receive all shareholder general mailings,"0 = No
+ 1 = Yes (default)"
+loan_limit_override,Account loan level limit override,
+interactive_portfolio_code,Interactive Portfolio Code,"Trades will be processed on the Interactive Portfolio System.
+ [B,C,D,E,F,O] Trades on a separate CMS ID"
+non_plan_book_value_flag,Non Plan Book Value Start - A value of  indicates a non-plan book value started account.,
+has_discrete_auth,Discret Auth,"blank, 'Y' or 0"
+last_update_date,Date of last update to the record. Generally the same as the Last Maintenance Date. Format YYYYMMDD,
+is_non_objecting_beneficial_owner,Client does not object to disclosing information to issuer,"0 = No (default)
+ 1 = Yes"
+is_objecting_to_disclose_info,Client objects to disclosing information to issuer.,"0 = No (default)
+ 1 = Yes"
+mailing_consent,Indicates whether the client wishes to receive routine mailings regarding the issuer per National Instrument 54-101 (AP.IO “MAIL”) mail type that the client has opted for.,"A=all, S = Special, D=Decline Values blank, 0 & 1"
+consent_to_pay_for_mail,Consent to Pay Indicator - Indicates whether the client has consented to being charged for mailings if there are an Objecting Beneficial Owner as per National Instrument 54-101 (AP.IO�). Client to pay for additional mailings,"0 = No (default)
+ 1 = Yes"
+consent_to_email_delivery,Indicates if the client has consented to receiving their shareholder information via e-mail as per National Instrument 54-101 (AP.IO�). The client has requested email delivery for issuers (not turned on in OSS),
+has_received_instruction,," blank
+  0
+  1"
+risk_tolerance,Account Risk tolerance - indicates percentage of risk client wants to be wiithin type of security totalling to 100%,"Format: (1 digit alphanumeric).(2 digit percentage) Type of security:
+ Low = L 
+ Medium = M
+ Medium-Higer = Q
+ High = H"
+investment_objective,Account investment objective. Code indicates type of security and percentage. Format: (1 digit alphanumeric).(2 digit percentage),"Type of security:
+ Income = B
+ Growth = C
+ Speculative = D
+ Growth = G
+ Liquidity = M
+ Speculative = S
+ Safety = X"
+is_broker_account,Account indicators for Broker account,
+is_inventory_account,Account indicators for Inventory account,
+is_gl_account,Account indicators for General Ledger account,
+is_control_account,Account indicators for Control account,
+is_extract_eligible,Extract Registered Representative (RR) code from account profile. RR code downloaded to portfolio," Y = Yes (default)
+  N = No"
+last_maintenance_time,Last Maint Time,
+last_maintenance_time,Last Maint Time,
+last_maintenance_user,Last Maint User,
+last_maintenance_user,Last Maint User,
+is_pledged,"Account used as collateral - for RRSP accounts only. If not released before year-end, it must be included in income for RRSP"," Y = Yes
+  N = No (Default)"
+special_fee_code,"Special fee for provincial plans. No editing, default is blank",
+non_calendar_year_end,Account used as collateral. RRSP accounts only (MM/YY),
+plan_effective_date,Effective date of the plan (YYYYMMDD). Default date is open and can be overridden,
+plan_end_date,Date the plan was closed (YYYYMMDD). Backdate current year. Reason code required,
+is_resp,RESP Indicator," 0 = No
+  1 = Yes"
+number_of_beneficiaries,Number of beneficiaries,
+rrif_original_date,Used by RRIF plans. The original open date for a RRIF account is used in calculating the minimum payment amount. The default for this date is the account open date.,
+use_original_date_for_payment_calc,Retail Plan Original Date Indicator," if the Original Date value is used for the minimum payment calculation, else defaults to ‘N’."
+is_family_resp,Family RESP Indicator - Indicates a Family RESP plan,
+is_hrdc_resp,RESP HRDC Indicator,
+is_plan_grandfathered,Grandfathered Account Indicator,
+resp_specimen_plan,RESP Specimen Plan - Identifies the specimen plan filed by the Plan Trustee with the Government of Canada,
+inserted_at,,
+updated_at,,
+is_olob,,
+retail_last_maintenance_time,,
+retail_last_maintenance_user,,
+visible_in_reports,,
