@@ -3,6 +3,9 @@ QuadReal/sampled_readings.csv
 QuadReal/preprocessed.csv
 QuadReal/preprocessed_lstm.csv
 QuadReal/unmerged_buildings.csv
+QuadReal/unmerged_device.csv
+QuadReal/predictions.csv
+QuadReal/modelDict.pkl
 QuadReal/test.csv
 Infinite_Investment_Systems/history.csv
 
